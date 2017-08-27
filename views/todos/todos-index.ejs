@@ -1,0 +1,20 @@
+<% include ../partials/header.ejs %>
+
+<h1> Todo Database </h1>
+
+<a href="todos/add">Add Todo</a>
+   <% for (let todo of data) { %>
+     <div class='todo'>
+       <p><%= todo.title %></p>
+       <p><%= todo.status %></p>
+       <a href='/todos/<%= todo.id%>'>Learn more!</a>
+
+       <!-- with method delete, override the post method, which is the default method for a form -->
+       <form action="/todos/<%= todo.id %>?_method=Delete " method="Post">
+       <input type="Submit" value="Delete"/>
+       </form>
+     </div>
+   <% } %>
+
+
+<% include ../partials/footer.ejs %>
