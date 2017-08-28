@@ -25,6 +25,16 @@ Todo.create = (todos) => {
    `, [todos.title, todos.status, todos.category]);
  }
 
+Todo.update = (todos, id) => {
+  return db.one(`
+     UPDATE todos SET
+     title = $1,
+     relese_year = $2,
+     director = $3
+     WHERE id = $4
+     RETURNING *
+   `, [todos.title, todos.status, todos.category, id]);
+ }
 
 Todo.destroy = (id) => {
    return db.none(`

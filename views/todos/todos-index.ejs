@@ -1,20 +1,33 @@
 <% include ../partials/header.ejs %>
 
-<h1> Todo Database </h1>
 
-<a href="todos/add">Add Todo</a>
+<div id = "container">
+  <div id = "newTodo">
+    <a href="todos/add">Add Todo</a>
+  </div>
+
    <% for (let todo of data) { %>
-     <div class='todo'>
-       <p><%= todo.title %></p>
-       <p><%= todo.status %></p>
-       <a href='/todos/<%= todo.id%>'>Learn more!</a>
+     <div class = "box">
+       <div class = "row">
+         <p><%= todo.title %></p>
+         <h2><%= todo.status %></h2>
+       </div>
+       <div class = "row">
+          <h2><%= todo.category %></h2>
+          <a href='/todos/<%= todo.id%>'>Info</a>
 
-       <!-- with method delete, override the post method, which is the default method for a form -->
-       <form action="/todos/<%= todo.id %>?_method=Delete " method="Post">
-       <input type="Submit" value="Delete"/>
-       </form>
-     </div>
+          <!-- with method delete, override the post method, which is the default method for a form -->
+
+          <form action="/todos/<%= todo.id %>?_method=Delete " method="Post">
+          <input type="Submit" value="Delete"/>
+          </form>
+
+          <form action="/todos/<%= data.id %>?_method=PUT" method="Post">
+           <input type="Submit" value="Edit"/>
+          </form>
+       </div>
+    </div>
    <% } %>
-
+</div>
 
 <% include ../partials/footer.ejs %>

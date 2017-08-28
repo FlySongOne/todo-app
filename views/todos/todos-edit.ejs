@@ -1,0 +1,16 @@
+<% include ../partials/header.ejs %>
+
+
+
+  <h1><%= data.title %></h1>
+  <h3><%= data.status %></h3>
+  <h3><%= data.category %></h3>
+  <form class="" action="/todos/<%= data.id %>?_method=PUT" method="post">
+    <input name="title" type="text" placeholder="<%= data.title %>"/>
+    <input name="status" type="text" placeholder="<%= data.status %>" />
+    <input name="category" type="text" placeholder="<%= data.category %>"/>
+    <input type="Submit" value="Update!"/>
+  </form>
+
+
+ <% include ../partials/footer.ejs %>

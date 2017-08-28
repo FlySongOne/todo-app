@@ -9,9 +9,9 @@ todoRoutes.post('/', todosController.create);
 todoRoutes.get('/add', (req, res) => {
    res.render('todos/todos-add');
 });
-
+todoRoutes.put('/:id', todosController.update);
 todoRoutes.get('/:id', todosController.show);
 todoRoutes.delete('/:id', todosController.delete);
-todoRoutes.put('/:id', todosController.update);
+//todoRoutes.put('/:id', todosController.update);
 
 module.exports = todoRoutes;
