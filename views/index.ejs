@@ -1,3 +1,6 @@
-
-  <h1>Hello From Index File</h1>
-  <h2><%= message %></h2>
+<% include ./partials/header.ejs %>
+  <div id ="landing">
+  <h1><%= message %></h1>
+  <a href="/todos">To-Dos</a>
+  </div>
+<% include ./partials/footer.ejs %>

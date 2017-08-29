@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
   // res.render is to render template.
   // res.send is to send data
-  res.render('index', { message:"Hello World!"});
+  res.render('index', { message:"Welcome To My To Do App!"});
 });
 
 app.use('/todos', todoRoutes);
